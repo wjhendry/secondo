@@ -1,0 +1,58 @@
+# day 2
+repository breaks down into:
+- working directory
+- staging area
+- repository
+You **commit** your changes from your working directory to the repository.
+Use `git add` to put the changes on the staging area.
+`git add .` adds all the files in the working directory 
+`git commit` puts the staging files into the repo and add the changes to the git log file.
+Add a message to the log:
+`git commit -m "a message to you, Rudi"`
+
+## Push from local to remote
+**push** your changes from your local repository to github.
+`git push`
+
+## Pull from remote to local
+now working from your laptop...
+connect to github.com and `git pull`to fetch the changes and put them to the local repo on your laptop.
+
+Using VSCode
+Viewing a hidden files - such as .git
+File => Preferences => Settings
+- Search for files exclude
+- get rid of the **/ in front of the relevant file type
+
+
+`cls` to clear in Terminal
+
+`git log` shows the history of the repo
+
+## Connect local repo to the remote repo
+`git remote -v` shows the connected repo if there is a link from your local repo to a repo on github.com
+
+To make a connection to the github.com repo:
+From the local repo:
+`git remote add origin https://github.com/wjhendry/course_b`
+
+Push to the github repo:
+`git push -u origin master`
+
+Remove the link:
+`git remove origin`
+
+If private, you need to include the PAT when you create the link to the github.com repo
+
+`git remote add origin https://token@github.com/wjhendry/course_b`
+
+
+## Difference between fetch and pull
+`git fetch` fetches any changes from the remote site and puts them in your working directory - so no files are changed in your local repo. This avoids conflicts.
+`git pull` fetches changes and merges them with the files in your working directory.
+
+Fetch a specific branch:
+`git fetch origin mybranch`
+
+Good practice:
+git pull before you change and push to the remote branch. You want to be synchronized before you make changes and push.
